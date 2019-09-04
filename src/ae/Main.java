@@ -3,8 +3,8 @@
  * 03.09.19 11:39
  */
 /*
- * Отправка по почте рейтинга операторов за вчерашнее число.
- * Данные берутся из MySql
+ * Отправка по почте рейтинга операторов за вчерашнее число, формируемого на основе данных MySql
+ *
  */
 package ae;
 
@@ -44,15 +44,13 @@ public class Main {
         if(otv != null) {
             System.out.println("Почта отправлена: " + R.SmtpMailTo);
         }
-
-
     }
 
     /**
      * Подготовить данные и файлы для работы
      * @return true - подготовлено, false - не готово
      */
-    public static boolean prepareWork()
+    private static boolean prepareWork()
     {
         R r = new R();   // для загрузки ресурсных значений
         r.loadDefault(); // значения по умолчанию
@@ -61,7 +59,7 @@ public class Main {
         //
         // проверим наличие каталогов
         String[] dstr = new String[]{R.workDir};
-        for(int i=0; i<dstr.length; i++) {
+        for(int i=0; i < dstr.length; i++) {
             String s = dstr[i];
             File f = new File(s);
             if(!f.exists()) {

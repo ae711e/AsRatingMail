@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2017. Aleksey Eremin
  * 28.01.17 21:52
+ * 04.09.19
  */
 
 package ae;
@@ -10,10 +11,15 @@ import java.util.Properties;
 
 /**
  * Created by ae on 28.01.2017.
+ * Отправка письма с таблицей рейтинга, формируемого на основе данных MySql
  * Ресурсный класс
+ *
+ * Modify:
+ * 04.09.19  изменил форму таблицы
+ *
  */
 public class R {
-    final static String Ver = "Ver. 1.01 03.09.2019"; // номер версии
+    final static String Ver = "Ver. 1.02 04.09.2019"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
@@ -48,7 +54,7 @@ public class R {
      * если не задан excelDIr берем как screenDir
      * То есть, можно задать только workDir и все будет валится туда
      */
-    public void loadDefault()
+    void loadDefault()
     {
         // http://stackoverflow.com/questions/2815404/load-properties-file-in-jar
         // Отобразим версию
@@ -149,7 +155,7 @@ public class R {
      * @param nameRes - название ресурса (относительно каталога пакета)
      * @return - байтовый массив
      */
-    public ByteArrayOutputStream readResB(String nameRes)
+    private ByteArrayOutputStream readResB(String nameRes)
     {
         String str = null;
         try {
@@ -201,7 +207,7 @@ public class R {
      * @param fileName  имя файла, куда записывается ресурс
      * @return  true - запись выполнена, false - ошибка
      */
-    public boolean writeRes2File(String nameRes, String fileName)
+    boolean writeRes2File(String nameRes, String fileName)
     {
         boolean b = false;
         ByteArrayOutputStream buf = readResB(nameRes);
