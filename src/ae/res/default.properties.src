@@ -1,8 +1,9 @@
 #
 # 03.09.2019
+# пример файла свойств: default.properties
 #
 # rabochii katalog D:/TMP/WORK /var/tmp/work
-workDir=/var/tmp
+#workDir=/var/tmp
 # adres pochtovogo servera (SMTP)
 #SmtpServer=adress_servra
 # adres poluchately email
