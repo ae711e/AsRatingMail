@@ -19,11 +19,11 @@ import java.util.Properties;
  *
  */
 public class R {
-    final static String Ver = "Ver. 1.02 04.09.2019"; // номер версии
+    final static String Ver = "Ver. 1.02"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
-    static String workDir =   null; //  "/var/tmp/work";     //"C:\\TMP\\WORK";    // рабочий каталог
+    static String workDir =   null; // рабочий каталог. если null, возьмет системный временный каталог
 
     final static String fileNameExcel = "rating.xls";  // имя файла Excel
 
