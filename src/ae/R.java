@@ -19,7 +19,7 @@ import java.util.Properties;
  *
  */
 public class R {
-    final static String Ver = "Ver. 1.02"; // номер версии
+    private final static String Ver = "Ver. 1.02"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
@@ -138,7 +138,7 @@ public class R {
      * by novel  http://skipy-ru.livejournal.com/5343.html
      * https://docs.oracle.com/javase/tutorial/deployment/webstart/retrievingResources.html
      * @param nameRes - имя ресурсного файла
-     * @return -содержимое ресурсного файла
+     * @return - содержимое ресурсного файла
      */
     public String readRes(String nameRes)
     {

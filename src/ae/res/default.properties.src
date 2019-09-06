@@ -1,10 +1,9 @@
 #
-# 03.09.2019
-# пример файла свойств: default.properties
+# example file: default.properties
 #
-# rabochii katalog D:/TMP/WORK /var/tmp/work
+# rabochii katalog
 #workDir=/var/tmp
-# adres pochtovogo servera (SMTP)
+# adres pochtovogo SMTP-servera
 #SmtpServer=adress_servra
 # adres poluchately email
 #SmtpMailTo=user@mail.ru
@@ -13,7 +12,7 @@
 # MySql properties
 # data base host
 #dbHost=localhost
-# data base name
+# name data base
 #dbBase=basa
 # user of MySql
 #dbUser=user_mysql
