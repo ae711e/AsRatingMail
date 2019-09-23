@@ -19,7 +19,7 @@ import java.util.Properties;
  *
  */
 public class R {
-    private final static String Ver = "Ver. 1.02"; // номер версии
+    private final static String Ver = "Ver. 1.03"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
