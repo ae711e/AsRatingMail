@@ -68,6 +68,7 @@ class FormaXls {
             ArrayList<String[]> arrlst;
             // SELECT / pn, DATE_FORMAT(Rating.dat,'%d.%m.%Y'),
             sql = "SELECT " +
+                "1," +                                          // порядковый номер строки
                 "Rating.id_region, " +                          // регион
                 "Rating.op_name, " +                            // оператор
                 "Rating.inn, " +                                // ИНН
@@ -91,8 +92,9 @@ class FormaXls {
 //                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 //                LocalDateTime dt = LocalDateTime.parse(sDat, format);
 //                String sDatO = dt.format(DateTimeFormatter.ofPattern("dd.MM.YYYY"));
-                setRowVals(row, rst); // записать строку
                 cnt++;
+                rst[0] = Integer.toString(cnt); // порядковый номер строки
+                setRowVals(row, rst); // записать строку
             }
             //
             // установить дату на листе
@@ -127,7 +129,7 @@ class FormaXls {
      */
     private void setRowVals(Row row, String[] rst)
     {
-        final String intIndex = "(0)(3)(4)"; // список колонок с числами
+        final String intIndex = "(0)(1)(4)(5)"; // список колонок с числами
         for(int i = 0; i < rst.length; i++) {
             String r = rst[i];
             if(intIndex.contains("("+i+")")) {
