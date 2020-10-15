@@ -55,7 +55,7 @@ public class Main {
         R r = new R();   // для загрузки ресурсных значений
         r.loadDefault(); // значения по умолчанию
         //
-        System.out.println("work  dir: " + R.workDir);
+        //System.out.println("work  dir: " + R.workDir);
         //
         // проверим наличие каталогов
         String[] dstr = new String[]{R.workDir};
