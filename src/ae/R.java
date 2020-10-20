@@ -16,10 +16,11 @@ import java.util.Properties;
  *
  * Modify:
  * 04.09.19  изменил форму таблицы
+ * 16.09.20  добавил столбец с нумерацией нарушителей
  *
  */
 public class R {
-    private final static String Ver = "Ver. 1.03"; // номер версии
+    private final static String Ver = "Ver. 1.04"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
