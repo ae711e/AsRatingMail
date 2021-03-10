@@ -74,7 +74,7 @@ class FormaXls {
                 "Rating.inn, " +                                // ИНН
                 "total, " +                                     // всего в реестре
                 "not_block, " +                                 // не заблокировано
-                "CONCAT(ROUND(100*not_block/total,2),'%'), " +  // процент
+                "CONCAT(ROUND(100*not_block/total,2),''), " +   // процент (не ставим знак %)
                 "GROUP_CONCAT(note SEPARATOR ' | ') " +         // вышестоящие
                 "FROM Rating LEFT JOIN " +
                 "(Opers LEFT JOIN opnotes ON (Opers.op_id=opnotes.op_id AND opnotes.tip='Uplink')) " +
