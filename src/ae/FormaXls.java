@@ -72,9 +72,9 @@ class FormaXls {
                 "Rating.id_region, " +                          // регион
                 "Rating.op_name, " +                            // оператор
                 "Rating.inn, " +                                // ИНН
+                "CONCAT(ROUND(100*not_block/total,2),''), " +   // процент (не ставим знак %)
                 "total, " +                                     // всего в реестре
                 "not_block, " +                                 // не заблокировано
-                "CONCAT(ROUND(100*not_block/total,2),''), " +   // процент (не ставим знак %)
                 "GROUP_CONCAT(note SEPARATOR ' | ') " +         // вышестоящие
                 "FROM Rating LEFT JOIN " +
                 "(Opers LEFT JOIN opnotes ON (Opers.op_id=opnotes.op_id AND opnotes.tip='Uplink')) " +
@@ -129,7 +129,7 @@ class FormaXls {
      */
     private void setRowVals(Row row, String[] rst)
     {
-        final String intIndex = "(0)(1)(4)(5)"; // список колонок с числами
+        final String intIndex = "(0)(1)(5)(6)"; // список колонок с целыми числами
         for(int i = 0; i < rst.length; i++) {
             String r = rst[i];
             if(intIndex.contains("("+i+")")) {

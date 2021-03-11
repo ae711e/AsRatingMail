@@ -18,10 +18,10 @@ import java.util.Properties;
  * 04.09.19  изменил форму таблицы
  * 16.09.20  добавил столбец с нумерацией нарушителей
  * 10.03.21  в колонке процентов у цифр сам знак % не ставим
- *
+ * 11.03.21  изменил порядок колонок в листе
  */
 public class R {
-    private final static String Ver = "Ver. 1.05"; // номер версии
+    private final static String Ver = "Ver. 1.06"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
