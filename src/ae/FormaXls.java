@@ -130,6 +130,8 @@ class FormaXls {
     private void setRowVals(Row row, String[] rst)
     {
         final String intIndex = "(0)(1)(5)(6)"; // список колонок с целыми числами
+        final String dblIndex = "(4)"; // список колонок с действительнымии числами
+        //
         for(int i = 0; i < rst.length; i++) {
             String r = rst[i];
             if(intIndex.contains("("+i+")")) {
@@ -137,13 +139,39 @@ class FormaXls {
                 try {
                     int v = Integer.parseInt(r); // числовое представление
                     setCellVal(row, i, v);
-                    continue;
                 } catch (Exception e) {
                     System.err.println("Ошибка преобразования числа: " + r + " - " + e.getMessage());
                 }
+            }else if(dblIndex.contains("("+i+")")) {
+                // действительная колонка
+                try {
+                    double v = Double.parseDouble(r); // числовое представление
+                    setCellVal(row, i, v);
+                } catch (Exception e) {
+                    System.err.println("Ошибка преобразования числа: " + r + " - " + e.getMessage());
+                }
+            } else {
+                setCellVal(row, i, r);
             }
-            setCellVal(row, i, r);
         }
+    }
+
+    /**
+     * Установить действительное числовое значение ячейки в заданной строке таблицы
+     * @param row   строка
+     * @param col   номер колонки
+     * @param val   устанавливаемое значения (double)
+     * @return      1 - значение установлено, 0 - не установлено
+     */
+    private boolean setCellVal(Row row, int col, double val)
+    {
+        try {
+            getCell(row, col).setCellValue(val);  // Access the cell
+        } catch (Exception e) {
+            System.err.println("ошибка здания значения клетке " + col + " value: " + val);
+            return false;
+        }
+        return true;
     }
 
     /**
