@@ -72,7 +72,7 @@ class FormaXls {
                 "Rating.id_region, " +                          // регион
                 "Rating.op_name, " +                            // оператор
                 "Rating.inn, " +                                // ИНН
-                "CONCAT(ROUND(100*not_block/total,2),''), " +   // процент (не ставим знак %)
+                "CONCAT(ROUND(100*not_block/total,3),''), " +   // процент (не ставим знак %)
                 "total, " +                                     // всего в реестре
                 "not_block, " +                                 // не заблокировано
                 "GROUP_CONCAT(note SEPARATOR ' | ') " +         // вышестоящие

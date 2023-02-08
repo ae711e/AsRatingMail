@@ -19,10 +19,11 @@ import java.util.Properties;
  * 16.09.20  добавил столбец с нумерацией нарушителей
  * 10.03.21  в колонке процентов у цифр сам знак % не ставим
  * 11.03.21  изменил порядок колонок в листе и добавил вывод действительных чисел
+ * 08.02.23  число знаков после точке в проценте стало 3
  *
  */
 public class R {
-    private final static String Ver = "Ver. 1.06"; // номер версии
+    private final static String Ver = "Ver. 1.7"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
