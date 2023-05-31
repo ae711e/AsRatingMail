@@ -69,8 +69,9 @@ class FormaXls {
             // SELECT / pn, DATE_FORMAT(Rating.dat,'%d.%m.%Y'),
             sql = "SELECT " +
                 "1," +                                          // порядковый номер строки
-                "Rating.id_region, " +                          // регион
+                "Regions.nam, " +                            // название региона
                 "Rating.op_name, " +                            // оператор
+                "Rating.id_region, " +                          // номер региона
                 "Rating.inn, " +                                // ИНН
                 "CONCAT(ROUND(100*not_block/total,3),''), " +   // процент (не ставим знак %)
                 "total, " +                                     // всего в реестре
@@ -79,6 +80,7 @@ class FormaXls {
                 "FROM Rating LEFT JOIN " +
                 "(Opers LEFT JOIN opnotes ON (Opers.op_id=opnotes.op_id AND opnotes.tip='Uplink')) " +
                 "ON Rating.inn = Opers.op_inn " +
+                "LEFT JOIN Regions ON Rating.id_region=Regions.id " +
                 "WHERE Rating.dat='" + strDat1 + "' " +
                 "GROUP BY pn;";
             arrlst = f_db.DlookupArray(sql);
@@ -129,8 +131,8 @@ class FormaXls {
      */
     private void setRowVals(Row row, String[] rst)
     {
-        final String intIndex = "(0)(1)(5)(6)"; // список колонок с целыми числами
-        final String dblIndex = "(4)"; // список колонок с действительнымии числами
+        final String intIndex = "(0)(3)(6)(7)"; // список колонок с целыми числами
+        final String dblIndex = "(5)"; // список колонок с действительнымии числами
         //
         for(int i = 0; i < rst.length; i++) {
             String r = rst[i];
