@@ -131,8 +131,8 @@ class FormaXls {
      */
     private void setRowVals(Row row, String[] rst)
     {
-        final String intIndex = "(0)(3)(6)(7)"; // список колонок с целыми числами
-        final String dblIndex = "(5)"; // список колонок с действительнымии числами
+        final String intIndex = R.intIndex;     // "(0)(3)(6)(7)"; // список колонок с целыми числами
+        final String dblIndex = R.dblIndex;     //"(5)"; // список колонок с действительнымии числами
         //
         for(int i = 0; i < rst.length; i++) {
             String r = rst[i];

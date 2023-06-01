@@ -20,10 +20,12 @@ import java.util.Properties;
  * 10.03.21  в колонке процентов у цифр сам знак % не ставим
  * 11.03.21  изменил порядок колонок в листе и добавил вывод действительных чисел
  * 08.02.23  число знаков после точки стало 3
- * 31.05.23  изменил формат вывода в Excel добавил назавние региона, а номер региона придвинул к ИНН
+ * 31.05.23  изменил формат вывода в Excel добавил название региона, а номер региона придвинул к ИНН
+ * 01.06.23  номера колонок задать в properies
  */
+
 public class R {
-    private final static String Ver = "Ver. 1.8"; // номер версии
+    private final static String Ver = "Ver. 1.9"; // номер версии
     
     final static String sep = System.getProperty("file.separator"); // разделитель имени каталогов
 
@@ -49,6 +51,9 @@ public class R {
     // тема и тело письма "Отчет о контроле доступности"
     static String MailSubject = "Рейтинг";
     static String MailMessage = "Рейтинг операторов. Приложение 1. Файл Excel";
+
+    static String   intIndex = "(0)(3)(6)(7)";      // список колонок в Excel с целыми числами
+    static String   dblIndex = "(5)";               // список колонок с действительнымии числами
     
     /**
      * загрузка значений параметров по-умолчанию из файла res/default.properties
@@ -80,6 +85,9 @@ public class R {
             dbBase = r2s(props, "dbBase", dbBase);
             dbUser = r2s(props, "dbUser", dbUser);
             dbPass = r2s(props, "dbPass", dbPass);
+            // колонки с числами
+            intIndex = r2s(props, "intIndex", intIndex);
+            dblIndex = r2s(props, "dblIndex", dblIndex);
             //
         } catch (IOException e) {
             e.printStackTrace();

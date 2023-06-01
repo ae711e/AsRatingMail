@@ -1,5 +1,6 @@
 #
 # example file: default.properties
+# 01.06.2023
 #
 # rabochii katalog
 #workDir=/var/tmp
@@ -18,3 +19,7 @@
 #dbUser=user_mysql
 # passwod of user
 #dbPass=password_user
+# colonums Excel with integer number
+#intIndex=(0)(3)(6)(7)
+# colonums Excel with real number
+#dblIndex=(5)
